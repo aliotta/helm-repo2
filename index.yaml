@@ -1,16 +1,199 @@
 apiVersion: v1
 entries:
   airflow:
-  - apiVersion: v2
-    appVersion: 2.1.0
-    created: "2021-07-21T12:49:02.153171-07:00"
+  - annotations:
+      artifacthub.io/changes: |
+        - description: Add ``type`` to extra secrets param
+          kind: added
+          links:
+            - name: "#20599"
+              url: https://github.com/apache/airflow/pull/20599
+        - description: Support elasticsearch connection ``scheme``
+          kind: added
+          links:
+            - name: "#20564"
+              url: https://github.com/apache/airflow/pull/20564
+        - description: Allows to disable built-in secret variables individually
+          kind: added
+          links:
+            - name: "#18974"
+              url: https://github.com/apache/airflow/pull/18974
+        - description: Add support for ``securityContext``
+          kind: added
+          links:
+            - name: "#18249"
+              url: https://github.com/apache/airflow/pull/18249
+        - description: Add extra containers, volumes and volume mounts for jobs
+          kind: added
+          links:
+            - name: "#18808"
+              url: https://github.com/apache/airflow/pull/18808
+        - description: Allow ingress multiple hostnames w/diff secrets
+          kind: added
+          links:
+            - name: "#18542"
+              url: https://github.com/apache/airflow/pull/18542
+        - description: PgBouncer extra volumes, volume mounts, and sslmode
+          kind: added
+          links:
+            - name: "#19749"
+              url: https://github.com/apache/airflow/pull/19749
+        - description: Allow specifying kerberos keytab
+          kind: added
+          links:
+            - name: "#19054"
+              url: https://github.com/apache/airflow/pull/19054
+        - description: Allow disabling the Helm hooks
+          kind: added
+          links:
+            - name: "#18776"
+              url: https://github.com/apache/airflow/pull/18776
+        - description: Add ``migration-wait-timeout``
+          kind: added
+          links:
+            - name: "#20069"
+              url: https://github.com/apache/airflow/pull/20069
+        - description: Increase default livenessProbe timeout
+          kind: changed
+          links:
+            - name: '#20698'
+              url: https://github.com/apache/airflow/pull/20698
+        - description: Strict schema for k8s objects for values.yaml
+          kind: changed
+          links:
+            - name: "#19181"
+              url: https://github.com/apache/airflow/pull/19181
+        - description: Remove unnecessary ``pod_template_file`` defaults
+          kind: changed
+          links:
+            - name: "#19690"
+              url: https://github.com/apache/airflow/pull/19690
+        - description: Use built-in ``check-migrations`` command for Airflow>=2
+          kind: changed
+          links:
+            - name: "#19676"
+              url: https://github.com/apache/airflow/pull/19676
+        - description: Fix precedence of ``affinity``, ``nodeSelector``, and ``tolerations``
+          kind: fixed
+          links:
+            - name: "#20641"
+              url: https://github.com/apache/airflow/pull/20641
+        - description: Fix chart elasticsearch default port 80 to 9200.
+          kind: fixed
+          links:
+            - name: "#20616"
+              url: https://github.com/apache/airflow/pull/20616
+        - description: Fix network policy issue for webserver and flowerui
+          kind: fixed
+          links:
+            - name: "#20199"
+              url: https://github.com/apache/airflow/pull/20199
+        - description: Use local definitions for k8s schema validation
+          kind: fixed
+          links:
+            - name: "#20544"
+              url: https://github.com/apache/airflow/pull/20544
+        - description: Add custom labels for ingresses/PVCs
+          kind: fixed
+          links:
+            - name: "#20535"
+              url: https://github.com/apache/airflow/pull/20535
+        - description: Fix extra secrets/configmaps labels
+          kind: fixed
+          links:
+            - name: "#20464"
+              url: https://github.com/apache/airflow/pull/20464
+        - description: Fix flower restarts on update
+          kind: fixed
+          links:
+            - name: "#20316"
+              url: https://github.com/apache/airflow/pull/20316
+        - description: Properly quote namespace names
+          kind: fixed
+          links:
+            - name: "#20266"
+              url: https://github.com/apache/airflow/pull/20266
+        - description: "Docs: Add ``helm dependency update`` step to chart INSTALL"
+          kind: changed
+          links:
+            - name: '#20702'
+              url: https://github.com/apache/airflow/pull/20702
+        - description: "Docs: Reword section covering the envvar secrets"
+          kind: changed
+          links:
+            - name: "#20566"
+              url: https://github.com/apache/airflow/pull/20566
+        - description: 'Docs: Add "Customizing Workers" page'
+          kind: changed
+          links:
+            - name: "#20331"
+              url: https://github.com/apache/airflow/pull/20331
+        - description: "Docs: Include Datadog example in production guide"
+          kind: changed
+          links:
+            - name: "#17996"
+              url: https://github.com/apache/airflow/pull/17996
+        - description: "Docs: Update production Helm guide database section to use k8s secret"
+          kind: changed
+          links:
+            - name: "#19892"
+              url: https://github.com/apache/airflow/pull/19892
+        - description: "Docs: Fix ``multiNamespaceMode`` docs to also cover KPO"
+          kind: changed
+          links:
+            - name: "#19879"
+              url: https://github.com/apache/airflow/pull/19879
+        - description: "Docs: Clarify Helm behaviour when it comes to loading default connections"
+          kind: changed
+          links:
+            - name: "#19708"
+              url: https://github.com/apache/airflow/pull/19708
+        - description: "Misc: Use ``2.2.3`` as default Airflow version"
+          kind: changed
+          links:
+            - name: "#20450"
+              url: https://github.com/apache/airflow/pull/20450
+        - description: "Misc: Add ArtifactHUB annotations for docs and screenshots"
+          kind: changed
+          links:
+            - name: "#20558"
+              url: https://github.com/apache/airflow/pull/20558
+        - description: "Misc: Add kubernetes 1.21 support"
+          kind: changed
+          links:
+            - name: "#19557"
+              url: https://github.com/apache/airflow/pull/19557
+      artifacthub.io/links: |
+        - name: Documentation
+          url: https://airflow.apache.org/docs/helm-chart/1.4.0/
+      artifacthub.io/screenshots: |
+        - title: DAGs View
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/dags.png
+        - title: Tree View
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/tree.png
+        - title: Calendar View
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/calendar.png
+        - title: Variable View
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/variable_hidden1.png
+        - title: Gantt Chart
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/gantt.png
+        - title: Task Duration
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/duration.png
+        - title: Code View
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/code.png
+        - title: Task Instance Context Menu
+          url: https://airflow.apache.org/docs/apache-airflow/2.2.3/_images/context.png
+    apiVersion: v2
+    appVersion: 2.2.3
+    created: "2022-04-12T15:39:44.762476-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
-      version: 6.3.12
-    description: Helm chart to deploy Apache Airflow, a platform to programmatically author, schedule, and monitor workflows
-    digest: 670c89697d73510c1b317cd563068bb7762cdafa5bdb8b1f9dddcd82484cb611
+      version: 10.5.3
+    description: The official Helm chart to deploy Apache Airflow, a platform to programmatically
+      author, schedule, and monitor workflows
+    digest: b33eac716e0416a18af89fb4fa1043fcfcf24f9f903cda3912729815213525df
     home: https://airflow.apache.org/
     icon: https://airflow.apache.org/docs/apache-airflow/stable/_images/pin_large.png
     keywords:
@@ -26,23 +209,129 @@ entries:
     - https://github.com/apache/airflow
     type: application
     urls:
-    - https://aliotta.github.io/helm-repo2/charts/airflow-1.1.0-rc1.tgz
-    version: 1.1.0-rc1
-  - apiVersion: v1
+    - https://aliotta.github.io/helm-repo/charts/airflow-1.4.0.tgz
+    version: 1.4.0
+  - apiVersion: v2
+    appVersion: 2.1.4
+    created: "2022-04-12T15:39:44.769927-07:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.5.3
+    description: The official Helm chart to deploy Apache Airflow, a platform to programmatically
+      author, schedule, and monitor workflows
+    digest: 96bce4de0d06df5f556c2800655fb713b23af78432696f61c0bf66e337bc7d9d
+    home: https://airflow.apache.org/
+    icon: https://airflow.apache.org/docs/apache-airflow/stable/_images/pin_large.png
+    keywords:
+    - apache
+    - airflow
+    - workflow
+    - scheduler
+    maintainers:
+    - email: dev@airflow.apache.org
+      name: Apache Airflow PMC
+    name: airflow
+    sources:
+    - https://github.com/apache/airflow
+    type: application
+    urls:
+    - https://aliotta.github.io/helm-repo/old_charts/airflow-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 2.0.0
-    created: "2021-07-21T12:49:02.146556-07:00"
+    created: "2022-04-12T15:39:44.75215-07:00"
     dependencies:
     - name: airflow
-      repository: https://github.com/astronomer/airflow/releases/download/oss-helm-chart%2F1.1.0-rc1/
-      version: 1.1.0-rc1
+      repository: https://airflow.apache.org
+      version: 1.4.0
     description: Helm chart to deploy the Astronomer Platform Airflow module
-    digest: b65186a54c3b8564392d5498439e62adc0084c9b0ec7b7430198d990ea99d024
+    digest: d46b1fc12e0a89f5cb0730285175f860679c89a5b361d6102ed8a20d8648b7cf
     icon: https://airflow.apache.org/docs/apache-airflow/stable/_images/pin_large.png
     keywords:
     - astronomer
     - airflow
     name: airflow
     urls:
-    - https://aliotta.github.io/helm-repo2/airflow-0.20.0.tgz
-    version: 0.20.0
-generated: "2021-07-21T12:49:02.137202-07:00"
+    - https://aliotta.github.io/helm-repo/airflow-1.2.0-rc1.tgz
+    version: 1.2.0-rc1
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2022-04-12T15:39:44.721906-07:00"
+    dependencies:
+    - name: airflow
+      repository: https://airflow.apache.org
+      version: 1.2.0
+    description: Helm chart to deploy the Astronomer Platform Airflow module
+    digest: 5217742260326e0cc989e1fce198ddac9a4a9c04031a714c980991b91f161580
+    icon: https://airflow.apache.org/docs/apache-airflow/stable/_images/pin_large.png
+    keywords:
+    - astronomer
+    - airflow
+    name: airflow
+    urls:
+    - https://aliotta.github.io/helm-repo/airflow-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v1
+    appVersion: 2.0.0
+    created: "2022-04-12T15:39:44.69604-07:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: '@stable'
+      version: 6.3.12
+    description: Helm chart to deploy the Astronomer Platform Airflow module
+    digest: f9dd84c03731142d3dd355b0c83b4762bbe7d7189887519b6083732655f8dc9d
+    icon: https://www.astronomer.io/static/airflowNewA.png
+    keywords:
+    - astronomer
+    name: airflow
+    urls:
+    - https://aliotta.github.io/helm-repo/airflow-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
+    appVersion: 2.0.0
+    created: "2022-04-12T15:39:44.672677-07:00"
+    dependencies:
+    - name: airflow
+      repository: https://airflow.apache.org
+      version: 1.2.0
+    description: Helm chart to deploy the Astronomer Platform Airflow module
+    digest: 779742b3f9e30a6ae2c51304ec88c147ef5e3056b3d452814dce24a9aa3ddb91
+    icon: https://airflow.apache.org/docs/apache-airflow/stable/_images/pin_large.png
+    keywords:
+    - astronomer
+    - airflow
+    name: airflow
+    urls:
+    - https://aliotta.github.io/helm-repo/airflow-1.0.0-rc1.tgz
+    version: 1.0.0-rc1
+  postgresql:
+  - apiVersion: v1
+    appVersion: 11.5.0
+    created: "2022-04-12T15:39:44.771971-07:00"
+    description: Chart for PostgreSQL, an object-relational database management system
+      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: e3d8f710db745334731a5ed5d0a3b8731bb74109388e4755cc1ef6b9c4b2f288
+    home: https://www.postgresql.org/
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    urls:
+    - https://aliotta.github.io/helm-repo/old_charts/postgresql-6.3.12.tgz
+    version: 6.3.12
+generated: "2022-04-12T15:39:44.648446-07:00"
